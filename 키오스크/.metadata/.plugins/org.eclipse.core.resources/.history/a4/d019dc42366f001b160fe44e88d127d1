@@ -1,0 +1,89 @@
+package Kiosk;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JScrollPane;
+
+public class Screen extends JFrame {
+
+	private JPanel MainPanel = new JPanel();
+	private JPanel ActionPanel = new JPanel();
+	private JPanel BtnScroll = new JPanel(), PreivewPanel = new JPanel();
+	//졸업 | 입학, 승진, 고백, 병문안, 드라이 플라워 | 비누 꽃 
+	private JButton screenBtn, schoolBtn, officeBtn, loveBtn, hospitalBtn, ectBtn;
+	private JScrollPane jp;
+
+	public Screen() {
+		setTitle("Love Flower");
+		MainPanel.setLayout(null);
+		ActionPanel.setLayout(null);
+		
+		screenBtn = new JButton();
+		screenBtn.setBounds(0, 0, 750, 650);	
+		screenBtn.setBorderPainted(false);
+		screenBtn.setContentAreaFilled(false);
+		screenBtn.setFocusPainted(false);
+		screenBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					MainPanel.setVisible(false);
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		MainPanel.add(screenBtn);
+		
+		jp = new JScrollPane(BtScroll, jp.HORIZONTAL_SCROLLBAR_NEVER, jp.VERTICAL_SCROLLBAR_ALWAYS);
+		jp.setBounds(15, 120, 180, 450);
+		
+		schoolBtn = new JButton();
+		schoolBtn.setBounds(0, 0, 750, 650);	
+		schoolBtn.setBorderPainted(false);
+		schoolBtn.setContentAreaFilled(false);
+		schoolBtn.setFocusPainted(false);
+		schoolBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		BtnScroll.add(schoolBtn);
+		ActionPanel.add(jp);
+		
+		add(MainPanel);
+		add(ActionPanel);
+		
+		
+		setBounds(450, 70, 750, 650);
+		setResizable(false);
+		setVisible(true);
+	}
+}

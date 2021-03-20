@@ -1,0 +1,187 @@
+package Kiosk;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JScrollPane;
+import java.awt.Color;
+
+public class Screen extends JFrame {
+
+	private JPanel MainPanel = new JPanel(null);
+	private JPanel ActionPanel = new JPanel(null);
+	private JPanel PreivewPanel = new JPanel(null);
+	//졸업 | 입학, 승진, 고백, 병문안, 드라이 플라워 | 비누 꽃 
+	private JButton screenBtn, schoolBtn, officeBtn, loveBtn, hospitalBtn, ectBtn;
+	private JScrollPane jp;
+
+	public Screen() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Love Flower");
+		MainPanel.setBackground(new Color(255, 255, 255));
+		
+		screenBtn = new JButton();
+		screenBtn.setBounds(-5, -3, 746, 622);	
+		screenBtn.setBorderPainted(false);
+		screenBtn.setContentAreaFilled(false);
+		screenBtn.setFocusPainted(false);
+		screenBtn.setIcon(new ImageIcon(Screen.class.getResource("/image/ScreenBtn.png")));
+		screenBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					MainPanel.setVisible(false);
+					add(ActionPanel);
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		MainPanel.add(screenBtn);
+		
+		schoolBtn = new JButton();
+		schoolBtn.setBounds(0, 0, 180, 100);	
+		schoolBtn.setBorderPainted(false);
+		//schoolBtn.setContentAreaFilled(false);
+		schoolBtn.setFocusPainted(false);
+		schoolBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		ActionPanel.add(schoolBtn);
+		
+		officeBtn = new JButton();
+		officeBtn.setBounds(0, 110, 180, 100);	
+		officeBtn.setBorderPainted(false);
+		//officeBtn.setContentAreaFilled(false);
+		officeBtn.setFocusPainted(false);
+		officeBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				officeBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				officeBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		ActionPanel.add(officeBtn);
+		
+		loveBtn = new JButton();
+		loveBtn.setBounds(0, 220, 180, 100);	
+		loveBtn.setBorderPainted(false);
+		//loveBtn.setContentAreaFilled(false);
+		loveBtn.setFocusPainted(false);
+		loveBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				loveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				loveBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		ActionPanel.add(loveBtn);
+		
+		hospitalBtn = new JButton();
+		hospitalBtn.setBounds(0, 330, 180, 100);	
+		hospitalBtn.setBorderPainted(false);
+		//hospitalBtn.setContentAreaFilled(false);
+		hospitalBtn.setFocusPainted(false);
+		hospitalBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				hospitalBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				hospitalBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		ActionPanel.add(hospitalBtn);
+		
+		ectBtn = new JButton();
+		ectBtn.setBounds(0, 440, 180, 100);	
+		ectBtn.setBorderPainted(false);
+		//ectBtn.setContentAreaFilled(false);
+		ectBtn.setFocusPainted(false);
+		ectBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				ectBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				ectBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		ActionPanel.add(ectBtn);
+		
+		add(MainPanel);
+		
+		setBounds(450, 70, 750, 650);
+		setResizable(false);
+		setVisible(true);
+	}
+}

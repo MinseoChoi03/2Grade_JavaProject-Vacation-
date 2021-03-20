@@ -1,0 +1,172 @@
+package Kiosk;
+
+import java.awt.Color;
+import java.awt.Cursor;
+
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.SwingConstants;
+
+public class PaymentPanel extends JPanel {
+	private JPanel viewPanel = new JPanel();
+	
+	private JButton cardBtn = new JButton("카드 결제"), couponBtn = new JButton("쿠폰 사용");
+	
+	private JLabel flowerLabel = new JLabel("선택한 꽃"), totalLable = new JLabel("총 합계");
+	private JLabel choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8, choice9, choice10,
+					total;
+
+	public PaymentPanel() {
+		setSize(750, 650);
+		setVisible(true);
+		setBackground(new Color(248, 248, 248));
+		setLayout(null);
+		
+		
+		viewPanel.setBackground(Color.WHITE);
+		viewPanel.setBounds(45, 45, 650, 410);
+		viewPanel.setLayout(null);
+		add(viewPanel);
+		
+		flowerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		flowerLabel.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		flowerLabel.setBounds(12, 10, 165, 50);
+		viewPanel.add(flowerLabel);
+		
+		totalLable.setHorizontalAlignment(SwingConstants.CENTER);
+		totalLable.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		totalLable.setBounds(12, 350, 165, 50);
+		viewPanel.add(totalLable);
+		
+		total = new JLabel("");
+		total.setHorizontalAlignment(SwingConstants.CENTER);
+		total.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		total.setBounds(189, 350, 448, 50);
+		viewPanel.add(total);
+		
+		choice1 = new JLabel("");
+		choice1.setHorizontalAlignment(SwingConstants.CENTER);
+		choice1.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice1.setBounds(189, 10, 215, 50);
+		viewPanel.add(choice1);
+		
+		choice2 = new JLabel("");
+		choice2.setHorizontalAlignment(SwingConstants.CENTER);
+		choice2.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice2.setBounds(422, 10, 215, 50);
+		viewPanel.add(choice2);
+		
+		choice3 = new JLabel("");
+		choice3.setHorizontalAlignment(SwingConstants.CENTER);
+		choice3.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice3.setBounds(189, 70, 215, 50);
+		viewPanel.add(choice3);
+		
+		choice4 = new JLabel("");
+		choice4.setHorizontalAlignment(SwingConstants.CENTER);
+		choice4.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice4.setBounds(422, 70, 215, 50);
+		viewPanel.add(choice4);
+		
+		choice5 = new JLabel("");
+		choice5.setHorizontalAlignment(SwingConstants.CENTER);
+		choice5.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice5.setBounds(189, 130, 215, 50);
+		viewPanel.add(choice5);
+		
+		choice6 = new JLabel("");
+		choice6.setHorizontalAlignment(SwingConstants.CENTER);
+		choice6.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice6.setBounds(422, 130, 215, 50);
+		viewPanel.add(choice6);
+		
+		choice7 = new JLabel("");
+		choice7.setHorizontalAlignment(SwingConstants.CENTER);
+		choice7.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice7.setBounds(189, 190, 215, 50);
+		viewPanel.add(choice7);
+		
+		choice8 = new JLabel("");
+		choice8.setHorizontalAlignment(SwingConstants.CENTER);
+		choice8.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice8.setBounds(422, 190, 215, 50);
+		viewPanel.add(choice8);
+		
+		choice9 = new JLabel("");
+		choice9.setHorizontalAlignment(SwingConstants.CENTER);
+		choice9.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice9.setBounds(189, 250, 215, 50);
+		viewPanel.add(choice9);
+		
+		choice10 = new JLabel("");
+		choice10.setHorizontalAlignment(SwingConstants.CENTER);
+		choice10.setFont(new Font("휴먼편지체", Font.PLAIN, 22));
+		choice10.setBounds(422, 250, 215, 50);
+		viewPanel.add(choice10);
+		
+		
+		cardBtn.setBounds(269, 515, 180, 55);
+		cardBtn.setBorderPainted(false);
+		cardBtn.setContentAreaFilled(false);
+		cardBtn.setFocusPainted(false);
+		cardBtn.setIcon(new ImageIcon(getClass().getResource("../image/cardBtn.png")));
+		cardBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				cardBtn.setIcon(new ImageIcon(getClass().getResource("../image/cardBtnE.png")));
+				cardBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				cardBtn.setIcon(new ImageIcon(getClass().getResource("../image/cardBtn.png")));
+				cardBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		add(cardBtn);
+		
+		
+		couponBtn.setBounds(515, 515, 180, 55);
+		couponBtn.setBorderPainted(false);
+		couponBtn.setContentAreaFilled(false);
+		couponBtn.setFocusPainted(false);
+		couponBtn.setIcon(new ImageIcon(getClass().getResource("../image/couponBtn.png")));
+		couponBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				couponBtn.setIcon(new ImageIcon(getClass().getResource("../image/couponBtnnE.png")));
+				couponBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				couponBtn.setIcon(new ImageIcon(getClass().getResource("../image/couponBtn.png")));
+				couponBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		add(couponBtn);
+		
+		
+	}
+}

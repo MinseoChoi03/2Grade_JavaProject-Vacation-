@@ -1,0 +1,191 @@
+package Kiosk;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import java.awt.Cursor;
+import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JScrollPane;
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+
+public class Screen extends JFrame {
+
+	private JPanel MainPanel = new JPanel(null);
+	private JPanel ActionPanel = new JPanel(null);
+	private JPanel BtnScroll = new JPanel(), PreivewPanel = new JPanel();
+	//졸업 | 입학, 승진, 고백, 병문안, 드라이 플라워 | 비누 꽃 
+	private JButton screenBtn, schoolBtn, officeBtn, loveBtn, hospitalBtn, ectBtn;
+	private JScrollPane jp;
+
+	public Screen() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Love Flower");
+		MainPanel.setBackground(new Color(255, 255, 255));
+		
+		screenBtn = new JButton();
+		screenBtn.setBounds(-5, -3, 746, 622);	
+		screenBtn.setBorderPainted(false);
+		screenBtn.setContentAreaFilled(false);
+		screenBtn.setFocusPainted(false);
+		screenBtn.setIcon(new ImageIcon(Screen.class.getResource("/image/ScreenBtn.png")));
+		screenBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				screenBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					MainPanel.setVisible(false);
+					getContentPane().add(ActionPanel);
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		MainPanel.add(screenBtn);
+		
+		jp = new JScrollPane(BtnScroll, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		jp.setBorder(null);
+		jp.setBounds(15, 120, 180, 400);
+		ActionPanel.add(jp);
+		
+		schoolBtn = new JButton();
+		schoolBtn.setBorderPainted(false);
+		//schoolBtn.setContentAreaFilled(false);
+		schoolBtn.setFocusPainted(false);
+		schoolBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				schoolBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		BtnScroll.setLayout(new CardLayout(0, 0));
+		BtnScroll.add(schoolBtn, "name_407607795886900");
+		
+		officeBtn = new JButton();
+		officeBtn.setBorderPainted(false);
+		//officeBtn.setContentAreaFilled(false);
+		officeBtn.setFocusPainted(false);
+		officeBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				officeBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				officeBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		BtnScroll.add(officeBtn, "name_407607819491900");
+		
+		loveBtn = new JButton();
+		loveBtn.setBorderPainted(false);
+		//loveBtn.setContentAreaFilled(false);
+		loveBtn.setFocusPainted(false);
+		loveBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				loveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				loveBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		BtnScroll.add(loveBtn, "name_407607836471100");
+		
+		hospitalBtn = new JButton();
+		hospitalBtn.setBorderPainted(false);
+		//hospitalBtn.setContentAreaFilled(false);
+		hospitalBtn.setFocusPainted(false);
+		hospitalBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				hospitalBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				hospitalBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		BtnScroll.add(hospitalBtn, "name_407607856941600");
+		
+		ectBtn = new JButton();
+		ectBtn.setBorderPainted(false);
+		//ectBtn.setContentAreaFilled(false);
+		ectBtn.setFocusPainted(false);
+		ectBtn.addMouseListener((MouseListener) new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				ectBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				ectBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			/*@Override
+			public void mousePressed(MouseEvent e) {
+				try {
+					
+					
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}*/
+		});
+		BtnScroll.add(ectBtn, "name_407607882019400");
+		
+		getContentPane().add(MainPanel);
+		
+		setBounds(450, 70, 750, 650);
+		setResizable(false);
+		setVisible(true);
+	}
+}

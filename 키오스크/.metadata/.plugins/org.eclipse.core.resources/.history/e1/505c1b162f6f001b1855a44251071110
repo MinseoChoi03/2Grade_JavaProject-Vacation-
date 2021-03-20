@@ -1,0 +1,20 @@
+package Kiosk;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class Screen extends JFrame {
+
+	private JPanel Panel = new JPanel();
+
+	public Screen() {
+
+		setBounds(100, 100, 450, 300);
+		add(Panel);
+	}
+
+}
